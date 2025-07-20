@@ -1,0 +1,27 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+polling_url: https://notifiarr.com/api/v1/user/dashboard/
+polling_headers: x-api-key={{ api_key }}&content-type=application/json
+polling_body: ''
+id: 122270
+custom_fields:
+- keyname: wanted_arrs
+  field_type: select
+  name: Wanted *arrs
+  description: Select which *arrs you want to display (Ctrl+Click for multiples)
+  options:
+  - Lidarr
+  - Radarr
+  - Readarr
+  - Sonarr
+  multiple: true
+- keyname: api_key
+  field_type: string
+  name: Notifiarr API Key
+  description: Enter your Notifiarr API Key (Notifiarr > Profile > API Keys)
+name: Notifiarr
+refresh_interval: 120

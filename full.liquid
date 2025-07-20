@@ -1,0 +1,38 @@
+<div class="layout">
+<div class="grid grid--cols-2"> <!-- Wrapper -->
+  {% for wanted in trmnl.plugin_settings.custom_fields_values.wanted_arrs %}
+  {% for media_arr_instance in details.response[wanted] %}
+
+  <div> <!-- Col -->
+    <span class="title">{{wanted | capitalize}}</span>
+
+    {% for media in media_arr_instance.latest %}
+
+    <div class="item item--emphasis-1">
+      <div class="meta"></div>
+      <div class="content">
+        <span class="title title--small">{{media.name}}</span>
+        <span class="description">
+        {% if media.season %}
+          S{{media.season}} E{{media.episode}} - {{media.subName}}
+        {% endif %}
+        </span>
+        <div class="flex gap--small">
+          <span class="label label--small label--underline">Added:</span>
+          <span class="label label--small label--underline">{{media.date}}</span>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+  </div> <!-- End Col -->
+  {% endfor %}
+  {% endfor %}
+</div> <!-- End Wrapper -->
+</div>
+
+<div class="title_bar">
+  <img class="image" src="https://notifiarr.com/images/logo/notifiarr.png" />
+  <span class="title">Notifiarr</span>
+</div>
