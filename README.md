@@ -1,3 +1,3 @@
 Display recently added items on a TRMNL display from the various *arrs.
 
-Uses notifiarr.com to as the source of data.
+Uses notifiarr.com as the source of data.
